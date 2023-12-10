@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drawing APP</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles_draw.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='draw.js') }}"></script>
+</head>
+
+<header>
+    Drawing Vault
+</header>
+
+<body>
+    <button id="home" onclick="window.location.href = '{{ url_for('home') }}'">
+        Home
+    </button>
+    {% for entry in entries %}
+    <p> The name of the painting "{{ entry[0] }}" </p>
+    <p> Artificial intelligence believes that this is {{ entry[1] }} </p>
+    <img src="data:image/jpeg;base64,{{ entry[2] }}" alt="img_data"/>
+    {% endfor %}
+</body>
+
+</html>

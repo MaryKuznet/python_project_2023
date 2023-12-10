@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drawing APP</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles_draw.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='draw.js') }}"></script>
+</head>
+
+<header>
+    Drawing result
+</header>
+
+<body>
+    <div class="result">
+        {%if prediction%}
+        <h2 style="color:black;">Artificial intelligence believes that this is {{ prediction }}!</h2>
+        {%else%}
+        <h2 style="color:black;">Nothing to predict!</h2>
+        {%endif%}
+        <img src="data:image/jpeg;base64,{{ img_data }}" alt="img_data"/>
+        <h3 style="color:black;">Enter your picture name</h3>
+        <form id="myForm" action="{{ url_for('save') }}" method="POST" enctype="multipart/form-data">
+            <input type="hidden" id='image' name="image" value="{{ img_data }}">
+            <input type="hidden" id='predict' name="predict" value="{{ prediction }}">
+            <input type="text" id="name_text" name="name" value="">
+            <input type="submit" value="Save">
+        </form>
+        <button id="home" onclick="window.location.href = '{{ url_for('home') }}'">
+        Home
+        </button>
+    </div>
+</body>
+
+</html>

@@ -1,2 +1,3 @@
-./venv/
-./vault.db
+venv/
+vault.db
+.idea/

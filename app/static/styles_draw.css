@@ -1,0 +1,41 @@
+canvas {
+    border: 5px;
+    border-style: solid;
+    border-color: blue;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+header {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+
+h1 {
+    font-size: 3em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+body {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+input, button {
+    font-size: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-style: none;
+}
+
+#name_text{
+    border-style: Double;
+}
