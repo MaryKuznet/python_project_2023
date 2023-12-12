@@ -10,7 +10,7 @@
 
 ```git clone https://github.com/MaryKuznet/python_project_2023.git```
 
-2. Переход в директорию Oxygen
+2. Переход в директорию python_project_2023
 
 ```cd python_project_2023```
 
