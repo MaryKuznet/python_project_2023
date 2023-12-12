@@ -8,6 +8,7 @@ import pickle
 from PIL import Image
 import io
 
+
 with open('categories.pkl', 'rb') as file:
     categories = pickle.load(file)
 
@@ -30,10 +31,12 @@ def predict():
     # Изменение размера
     resized = cv2.resize(image, (64, 64), interpolation=cv2.INTER_AREA)
     vect = np.asarray(resized, dtype="uint8")
+    vect[vect < 50] = 0
+    vect[vect >= 50] = 255
     vect = vect.reshape(1, 64, 64, 1).astype('float32')
-    my_prediction = model.predict(vect)
 
     # Получение предсказания
+    my_prediction = model.predict(vect)
     index = np.argmax(my_prediction[0])
     final_pred = categories[index]
 
