@@ -8,7 +8,7 @@ import pickle
 from PIL import Image
 import io
 
-
+# Категории для классификации
 with open('categories.pkl', 'rb') as file:
     categories = pickle.load(file)
 
@@ -17,7 +17,7 @@ with open('categories.pkl', 'rb') as file:
 def home():
     return render_template('base.html')
 
-# Предсказание
+# Предсказание и страничка предсказания
 @app.route('/predict', methods=['POST'])
 def predict():
     draw = request.form['url'][22:]
